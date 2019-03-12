@@ -1,0 +1,6 @@
+<header class="d-flex justify-content-between px-5 py-3 text-light bg-dark">
+  <span>
+    <%= current_admin.email %>
+  </span>
+  <%= link_to 'Выйти', destroy_admin_session_path, method: :delete %>
+</header>

@@ -1,0 +1,23 @@
+.notice {
+  width: 600px;
+}
+
+#new_question_form {
+  width: 600px;
+  height: auto;
+
+  input[type="submit"] {
+    width: 200px;
+    margin: 10px auto;
+  }
+
+  span {
+    margin: 20px 0 5px 0;
+    font-size: 12px;
+  }
+
+  p {
+    margin: 20px 0 5px 0;
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,22 @@
+<% if @questions.length %>
+  <table class="table col-9 p-3">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Вопрос</th>
+      <th scope="col">От кого</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @questions.each_with_index do |q, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= q.question %></td>
+          <td><%= q.source %></td>
+          <td><%= link_to 'Ответить', edit_question_path(q) if q.need_an_answer? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

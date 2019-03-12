@@ -1,0 +1,20 @@
+<div id="login_form" class="d-flex justify-content-end px-5 py-3">
+  <% if current_admin %>
+    <%= link_to current_admin.email, admin_path(current_admin) %>
+    <%= link_to 'Выйти', destroy_admin_session_path %>
+  <% else  %>
+    <%= link_to 'Войти', new_admin_session_path %>
+  <% end %>
+</div>
+
+<% if flash[:notice] %>
+  <div class="notice alert alert-info mx-auto my-2"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_with model: @question, local: true, id: "new_question_form", class: "m-auto d-flex flex-column" do |form| %>
+  <p>Задайте нам свой вопрос:</p>
+  <%= form.text_area :question, class: "form-control my-2" %>
+  <span>Вы можете оставить свой e-mail, в этом случае вам на почту придет ответ от наших Администраторов.</span>
+  <%= form.text_field :email, class: "form-control my-2" %>
+  <%= form.submit 'Отправить вопрос', class: "btn btn-outline-success" %>
+<% end %>
