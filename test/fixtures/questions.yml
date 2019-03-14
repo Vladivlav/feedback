@@ -1,0 +1,8 @@
+with_email:
+  id: 1
+  question: А были ли американцы на Луне?
+  email: geek@gmail.com
+
+without_email:
+  id: 2
+  question: Есть ли жизнь на марсе?
